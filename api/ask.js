@@ -1,11 +1,3 @@
-// server.js
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 // api/ask.js
 export default async function handler(req, res) {
