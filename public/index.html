@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shia AI Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📿 Shia AI Quiz</h1>
+      <p>Test your knowledge on Ahlulbayt (a) and Shia Islam</p>
+    </header>
+
+    <section class="input-area">
+  <input type="text" id="topic" placeholder="Enter topic (e.g., Imam Ali)" />
+  <button onclick="generateQuiz()">Generate Questions</button>
+  <button onclick="generateTradition()">Get a Shia Tradition 📜</button>
+  <div id="traditionBox" class="tradition-box"></div>
+</section>
+
+
+    <form id="quizForm" onsubmit="submitQuiz(event)"></form>
+
+    <div id="resultBox" class="result-box"></div>
+  </div>
+
+  <footer>
+    <small>&copy; 2025 Shia AI — For educational and spiritual enrichment</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
