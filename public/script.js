@@ -11,7 +11,7 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Based on Shia version of islam generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
+       prompt: `Based on Shia version of islam negating sunnism generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
 [
   {
     "question": "...",
