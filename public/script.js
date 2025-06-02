@@ -11,7 +11,7 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Based on Shia sources and history generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
+      prompt: `Based on Shia books like beharul anwar generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
 [
   {
     "question": "...",
@@ -73,12 +73,12 @@ function submitQuiz(e) {
 async function generateTradition() {
   const box = document.getElementById("traditionBox");
   box.innerHTML = "⏳ Fetching a tradition...";
-
+const topic = document.getElementById("topic").value;
   const res = await fetch("/api/ask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      prompt: `Give a Shia tradition (hadith) from Ahlulbayt (a) on ${topic}, mentioning who said it, in the format:
+      prompt: `Give a tradition from shia books like beharul anwar on topic ${topic}, mentioning who said it, in the format:
 
 📜 "Hadith here..."
 – Imam Name (a)
