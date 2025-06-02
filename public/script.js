@@ -11,7 +11,7 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Based on Shia books like beharul anwar generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
+      prompt: `Based on Shia version of islam generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
 [
   {
     "question": "...",
@@ -78,7 +78,7 @@ const topic = document.getElementById("topic").value;
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      prompt: `Give a tradition from shia books like beharul anwar on topic ${topic}, mentioning who said it, in the format:
+     prompt: `Give one tradition from book biharul anwar or any shia books, mentioning who said it, in the format:
 
 📜 "Hadith here..."
 – Imam Name (a)
