@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shia AI Quiz</title>
+  <title>Shia AI App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>📿 Shia AI Quiz</h1>
-      <p>Test your knowledge on Ahlulbayt (a) and Shia Islam</p>
+      <h1>📿 Shia AI App</h1>
+      <p>AI generated responses.</p>
     </header>
 
     <section class="input-area">
-  <input type="text" id="topic" placeholder="Enter topic (e.g., Imam Ali)" />
-  <button onclick="generateQuiz()">Generate Questions</button>
-  <button onclick="generateTradition()">Get a Shia Tradition 📜</button>
+       <button onclick="generateTradition()">Get a Shia Tradition 📜</button>
   <div id="traditionBox" class="tradition-box"></div>
+      
+  <input type="text" id="topic" placeholder="Enter topic (e.g., Imam Ali)" />
+  <button onclick="generateQuiz()">Generate Quiz</button>
+ 
 </section>
 
 
