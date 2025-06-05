@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shia AI App</title>
+  <title>Shia AI Quiz</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,18 +14,53 @@
     </header>
 
     <section class="input-area">
-       <button onclick="generateTradition()">Get a Shia Tradition 📜</button>
-  <div id="traditionBox" class="tradition-box"></div>
+      <button onclick="generateTradition()">Click here to get a Tradition 📜</button>
+      <div id="traditionBox" class="tradition-box"></div>
+   
+  <script>
+    function getText() {
+      return document.getElementById("traditionBox").innerText;
+    }
+        
+    function copyToClipboard1() {
+      const text = getText();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Shia AI Q&A copied. You can share!");
+      });
+    }
+  </script>
+      <!-- <input type="text" id="question" placeholder="Enter question (e.g., Who is Imam Mahdi?)" /> -->
+      <button onclick="generateAnswer()">Click here to generate Q & A</button>
+      <div id="answerBox" class="tradition-box"></div>      
+  
+  <script>
+    function getText() {
+      return document.getElementById("answerBox").innerText;
+    }
+
+    function copyToClipboard2() {
+      const text = getText();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Shia AI Q&A copied. You can share!");
+      });
+    }
+  </script>
+    </section>
+       <section class="input-area">
       
-  <input type="text" id="topic" placeholder="Enter topic (e.g., Imam Ali)" />
-  <button onclick="generateQuiz()">Generate Quiz</button>
- 
+  <!-- <input type="text" id="topic" placeholder="Enter topic (e.g., Imam Ali)" /> -->
+  
+  <button onclick="generateQuiz()"> Click here to generate Quiz</button>
+  
 </section>
 
 
     <form id="quizForm" onsubmit="submitQuiz(event)"></form>
 
     <div id="resultBox" class="result-box"></div>
+  <div style="font-size: 0.9em; color: #555; margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
+  <strong>Disclaimer:</strong> This AI-generated content is based on user prompts and historical Islamic sources such as Bihar al-Anwar and other Shia scholarly works. It is not a substitute for guidance from a qualified Islamic scholar (Marja' or Alim). Always consult a trusted scholar for matters of religious rulings or interpretation. The AI may occasionally produce inaccurate or contextually incorrect responses.
+</div>
   </div>
 
   <footer>
