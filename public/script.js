@@ -1,7 +1,7 @@
 let correctAnswers = [];
 
 async function generateQuiz() {
-  const topic = document.getElementById("topic").value;
+  //const topic = document.getElementById("topic").value;
   const quizForm = document.getElementById("quizForm");
   const resultBox = document.getElementById("resultBox");
   resultBox.textContent = '';
@@ -11,18 +11,20 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-       prompt: `Based on Shia version of islam negating sunnism generate 5 multiple choice questions (MCQ) on ${topic} in JSON array format like:
+      prompt: `Generate 5 multiple choice questions (MCQs) in JSON array format based only on authentic Shia sources (like Bihar al-Anwar, Al-Kafi, etc.) about the event of Ghadir Khumm in JSON array format like:
 [
   {
-    "question": "...",
-    "options": ["A", "B", "C", "D"],
-    "answer": "B"
+    "question": "Your question here",
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "answer": "Correct option (exact match from options)"
   },
   ...
-]`
+]
+
+Ensure all questions and answers are historically accurate and traceable to Shia references. Do not include fabricated or weak narrations or Sunni views. Fact check with shia prespective and then write.`
     })
   });
-
+//${topic}
   const data = await res.json();
   if (data.error) {
     quizForm.innerHTML = `<p style="color:red;">❌ Error: ${data.error.message || data.error}</p>`;
@@ -73,17 +75,17 @@ function submitQuiz(e) {
 async function generateTradition() {
   const box = document.getElementById("traditionBox");
   box.innerHTML = "⏳ Fetching a tradition...";
-const topic = document.getElementById("topic").value;
+
   const res = await fetch("/api/ask", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-     prompt: `Give one tradition from book biharul anwar or any shia books, mentioning who said it, in the format:
+      prompt: `Give one tradition from book biharul-anwar or Al-kafi, mentioning who said it, in the format:
 
 📜 "Hadith here..."
 – Imam Name (a)
 
-Provide book reference and keep line break in between.`,
+Provide tradition reference and keep line break in between. Ensure tradition is historically accurate and traceable to Shia references. Do not include fabricated or weak narrations or Sunni views. Fact check with shia prespective and then write.`,
     }),
   });
 
@@ -94,4 +96,35 @@ Provide book reference and keep line break in between.`,
   }
 
   box.innerHTML = `<blockquote>${data.response}</blockquote>`;
+  //copyToClipboard1();
+}
+
+async function generateAnswer() {
+  const box = document.getElementById("answerBox");
+  box.innerHTML = "⏳ Fetching answer...";
+//const question = document.getElementById("question").value;
+  const res = await fetch("/api/ask", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      prompt: `Generate an islamic question negating sunni aqaed and give shia version of answer from website www.al-islam.org or www.sistani.org/english, in format like:
+ 
+    Question here...
+
+    📋Answer here...
+
+    Website name in italic...
+  
+ Never negate shia beliefs while answering. Fact check with shia prespective and then write.`,
+    }),
+  });
+
+  const data = await res.json();
+  if (data.error) {
+    box.innerHTML = `<p style="color:red;">❌ ${data.error.message || "Error"}</p>`;
+    return;
+  }
+
+  box.innerHTML = `<blockquote>${data.response}</blockquote>`;
+  copyToClipboard2();
 }
