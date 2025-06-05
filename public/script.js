@@ -11,7 +11,7 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Generate 5 multiple choice questions (MCQs) in JSON array format based only on authentic Shia sources (like Bihar al-Anwar, Al-Kafi, etc.) about the event of Ghadir Khumm in JSON array format like:
+      prompt: `Generate 5 multiple choice questions (MCQs) in JSON array format based only on authentic Shia sources (like Bihar al-Anwar, Al-Kafi, etc.) about the event of Ghadir Khumm, Mubahila or Muharram in JSON array format like:
 [
   {
     "question": "Your question here",
