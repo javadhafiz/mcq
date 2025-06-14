@@ -11,7 +11,7 @@ async function generateQuiz() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      prompt: `Generate 5 multiple choice questions (MCQs) in JSON array format based only on authentic Shia sources (like Bihar al-Anwar, Al-Kafi, etc.) about the event of Ghadir Khumm, Mubahila or Muharram in JSON array format like:
+      prompt: `Generate 12 multiple choice questions (MCQs) in JSON array format based only on authentic Shia sources (like Bihar al-Anwar, Al-Kafi, etc.) about the event of Ghadir Khumm in JSON array format like:
 [
   {
     "question": "Your question here",
@@ -21,7 +21,7 @@ async function generateQuiz() {
   ...
 ]
 
-Ensure all questions and answers are historically accurate and traceable to Shia references. Do not include fabricated or weak narrations or Sunni views. Fact check with shia prespective and then write.`
+Ensure all questions and answers are historically accurate and traceable to Shia references. Do not include fabricated or weak narrations or Sunni views. Fact check with shia prespective and then generate.`
     })
   });
 //${topic}
