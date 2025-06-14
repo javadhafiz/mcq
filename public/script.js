@@ -107,7 +107,7 @@ async function generateAnswer() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      prompt: `Generate an islamic question negating sunni aqaed and give shia version of answer from website www.al-islam.org or www.sistani.org/english, in format like:
+      prompt: `Generate an islamic question and its answer based on Shia version from website www.al-islam.org in format like:
  
     Question here...
 
